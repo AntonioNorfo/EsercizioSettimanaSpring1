@@ -1,10 +1,6 @@
 package antonio.GestionePrenotazioni.Entities;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,19 +13,21 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @ToString
-
-
 @Entity
 @Table(name = "prenotazioni")
 public class Prenotazione {
+
     @Id
     @GeneratedValue
     private UUID prenotazione_id;
 
     private LocalDate data;
 
-    private UUID utente_id;
+    @ManyToOne
+    @JoinColumn(name = "utente_id", nullable = false)
+    private Utente utente;
 
-    private UUID postazione_id;
-
+    @ManyToOne
+    @JoinColumn(name = "postazione_id", nullable = false)
+    private Postazione postazione;
 }

@@ -9,25 +9,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-
-
 @Entity
 @Table(name = "edifici")
-
 public class Edificio {
+
     @Id
     @GeneratedValue
-    private String edificio_id;
+    private UUID edificio_id;
 
     private String nome;
 
     private String indirizzo;
 
     private String citta;
-
-
 }
+

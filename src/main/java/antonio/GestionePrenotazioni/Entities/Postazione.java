@@ -1,11 +1,7 @@
 package antonio.GestionePrenotazioni.Entities;
 
-
 import antonio.GestionePrenotazioni.Enums.TipoPostazione;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,10 +13,8 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @ToString
-
 @Entity
 @Table(name = "postazioni")
-
 public class Postazione {
 
     @Id
@@ -29,9 +23,12 @@ public class Postazione {
 
     private String descrizione;
 
+    @Enumerated(EnumType.STRING)
     private TipoPostazione tipo;
 
     private int num_max_occupanti;
 
-    private UUID edificio_id;
+    @ManyToOne
+    @JoinColumn(name = "edificio_id", nullable = false)
+    private Edificio edificio;
 }

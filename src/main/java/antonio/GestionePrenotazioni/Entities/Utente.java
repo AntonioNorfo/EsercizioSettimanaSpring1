@@ -15,7 +15,6 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @ToString
-
 @Entity
 @Table(name = "utenti")
 public class Utente {
