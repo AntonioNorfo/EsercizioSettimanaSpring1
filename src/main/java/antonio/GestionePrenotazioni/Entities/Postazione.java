@@ -31,4 +31,11 @@ public class Postazione {
     @ManyToOne
     @JoinColumn(name = "edificio_id", nullable = false)
     private Edificio edificio;
+
+    public Postazione(String descrizione, TipoPostazione tipo, int num_max_occupanti, Edificio edificio) {
+        this.descrizione = descrizione;
+        this.tipo = tipo;
+        this.num_max_occupanti = num_max_occupanti;
+        this.edificio = edificio;
+    }
 }

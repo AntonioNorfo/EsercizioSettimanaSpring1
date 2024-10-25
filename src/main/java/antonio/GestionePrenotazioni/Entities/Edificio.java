@@ -28,5 +28,10 @@ public class Edificio {
     private String indirizzo;
 
     private String citta;
+    
+    public Edificio(String nome, String indirizzo, String citta) {
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.citta = citta;
+    }
 }
-
