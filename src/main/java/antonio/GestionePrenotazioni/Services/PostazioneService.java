@@ -22,4 +22,11 @@ public class PostazioneService {
         log.info("Numero di postazioni trovate: {}", postazioni.size());
         return postazioni;
     }
+
+    public Postazione salvaPostazione(Postazione postazione) {
+        log.info("Salvataggio della postazione: {}", postazione.getDescrizione());
+        return postazioneRepository.save(postazione);
+    }
+
+
 }
