@@ -31,13 +31,4 @@ public class Prenotazione {
     @JoinColumn(name = "postazione_id", nullable = false)
     private Postazione postazione;
 
-    public void setUtente(Utente utente) {
-    }
-
-    public void setPostazione(Postazione postazione) {
-
-    }
-
-    public void setData(LocalDate data) {
-    }
 }
